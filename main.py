@@ -20,8 +20,10 @@ my_text_column = Label(text="")
 my_text_column.pack()
 
 
+def calculatebutton_selected():
+    print("working")
 
-calculate_button = Button(text="Calculate", padx=20, pady=15)
+calculate_button = Button(text="Calculate", padx=20, pady=15, command=calculatebutton_selected)
 calculate_button.pack()
 
 
