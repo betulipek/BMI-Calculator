@@ -12,6 +12,10 @@ def calculate_bmi():
     if weight == "" or height == "":
         result_label.config(text="Please Enter Weight and Height")
 
+    else:
+        bmi = weight / height ** 2
+        print((bmi))
+
 
 weight_input_label = tkinter.Label(text="Enter Your Weight (Kg)")
 weight_input_label.pack()
@@ -26,18 +30,12 @@ height_input.pack()
 heightandweight_label = tkinter.Label(text="")
 heightandweight_label.pack()
 
-calculate_button = tkinter.Button(text="Calculate",width=15)
+calculate_button = tkinter.Button(text="Calculate",width=15, command=calculate_bmi)
 calculate_button.pack()
 
 
 result_label = tkinter.Label()
 result_label.pack()
-
-
-
-
-
-
 
 
 window.mainloop()
