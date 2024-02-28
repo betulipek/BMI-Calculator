@@ -1,32 +1,43 @@
-from tkinter import *
+import tkinter
 
-window = Tk()
+window = tkinter.Tk()
 window.title("BMI Calculator")
-window.minsize(300,300)
+window.minsize(width=250, height=250)
+window.config(padx=30, pady=30)
 
-my_text_weight = Label(text="Enter Your Weight(kg)", pady=20)
-my_text_weight.pack()
+def calculate_bmi():
+    height = height_input.get()
+    weight = weight_input.get()
 
-my_entry_weight = Entry(width=10)
-my_entry_weight.pack()
-
-my_text_height = Label(text="Enter Your Height(cm)", pady=20)
-my_text_height.pack()
-
-my_entry_height = Entry(width=10)
-my_entry_height.pack()
-
-my_text_column = Label(text="")
-my_text_column.pack()
+    if weight == "" or height == "":
+        result_label.config(text="Please Enter Weight and Height")
 
 
-def calculatebutton_selected():
-    print("working")
+weight_input_label = tkinter.Label(text="Enter Your Weight (Kg)")
+weight_input_label.pack()
+weight_input = tkinter.Entry(width=10)
+weight_input.pack()
 
-calculate_button = Button(text="Calculate", padx=20, pady=15, command=calculatebutton_selected)
+height_input_label = tkinter.Label(text="Enter Your Height (Cm)")
+height_input_label.pack()
+height_input = tkinter.Entry(width=10)
+height_input.pack()
+
+heightandweight_label = tkinter.Label(text="")
+heightandweight_label.pack()
+
+calculate_button = tkinter.Button(text="Calculate",width=15)
 calculate_button.pack()
+
+
+result_label = tkinter.Label()
+result_label.pack()
+
+
+
+
+
 
 
 
 window.mainloop()
-
